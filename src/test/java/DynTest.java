@@ -30,7 +30,7 @@ class DynTest {
 
 
     @TestFactory
-    Stream<DynamicTest> testFactory() {
+    Stream<DynamicTest> doubleTestFactory() {
         Random r = new Random();
 
         return IntStream.range(1, 10).mapToObj(i -> {
@@ -40,6 +40,21 @@ class DynTest {
 
             return DynamicTest.dynamicTest(String.format("[%d] plusTest - %f + %f", i, a, b), () -> {
                 assertEquals(answer, lib.plus(a, b), 0.00001);
+            });
+        });
+    }
+
+    @TestFactory
+    Stream<DynamicTest> intTestFactory() {
+        Random r = new Random();
+
+        return IntStream.range(1, 10).mapToObj(i -> {
+            int a = r.nextInt() % (Integer.MAX_VALUE / 2),
+                    b = r.nextInt() % (Integer.MAX_VALUE / 2);
+            long answer = a + b;
+
+            return DynamicTest.dynamicTest(String.format("[%d] plusTest - %d + %d", i, a, b), () -> {
+                assertEquals(answer, lib.plus(a, b));
             });
         });
     }

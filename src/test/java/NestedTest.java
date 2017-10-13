@@ -29,7 +29,7 @@ class NestedTest {
      */
     @Test
     void testPlus_int() {
-        assertEquals(4, lib.plus(3, 1));
+        assertEquals(4L, lib.plus(3, 1));
     }
 
     @Test
@@ -50,7 +50,7 @@ class NestedTest {
 
         @Test
         void testPlus() {
-            assertEquals(4, lib.plus(3, 1));
+            assertEquals(4L, lib.plus(3, 1));
         }
     }
 

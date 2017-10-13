@@ -31,8 +31,8 @@ class ParamTest {
 
     static Stream<Arguments> testPlusValues() {
         return Stream.of(
-                Arguments.of(1, 3, 4),
-                Arguments.of(2, 8, 10)
+                Arguments.of(1, 3, 4L),
+                Arguments.of(2, 8, 10L)
         );
     }
 
@@ -44,7 +44,7 @@ class ParamTest {
      */
     @ParameterizedTest()
     @MethodSource("testPlusValues")
-    void testPlus_stream(int a, int b, int ans) {
+    void testPlus_stream(int a, int b, long ans) {
         assertEquals(ans, lib.plus(a, b));
     }
 
@@ -56,7 +56,7 @@ class ParamTest {
      */
     @ParameterizedTest()
     @CsvSource({"7, 1, 8", "11, 2, 13", "3, 3, 6"})
-    void testPlus_csv(int a, int b, int ans) {
+    void testPlus_csv(int a, int b, long ans) {
         assertEquals(ans, lib.plus(a, b));
     }
 
@@ -68,7 +68,7 @@ class ParamTest {
      */
     @ParameterizedTest()
     @CsvFileSource(resources = "/paramtest_csvfile.csv")
-    void testPlus_csvfile(int a, int b, int ans) {
+    void testPlus_csvfile(int a, int b, long ans) {
         assertEquals(ans, lib.plus(a, b));
     }
 }

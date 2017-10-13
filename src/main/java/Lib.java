@@ -1,8 +1,8 @@
 
 public class Lib {
 
-    public int plus(int a, int b) {
-        return a + b;
+    public long plus(int a, int b) {
+        return (long)a + (long)b;
     }
 
     public double plus(double a, double b) {
