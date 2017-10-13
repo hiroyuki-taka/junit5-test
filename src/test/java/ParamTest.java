@@ -12,10 +12,10 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ParamTest {
+class ParamTest {
 
-    Lib lib;
-    static Logger logger;
+    private Lib lib;
+    private static Logger logger;
 
     @BeforeAll
     static void setup() {

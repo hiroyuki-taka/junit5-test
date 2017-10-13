@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class NestedTest {
+class NestedTest {
 
     private Lib lib;
     private static Logger logger;
@@ -66,7 +66,4 @@ public class NestedTest {
             assertEquals(4.3, lib.plus(3.2, 1.1), 0.000001);
         }
     }
-
-
-
 }
