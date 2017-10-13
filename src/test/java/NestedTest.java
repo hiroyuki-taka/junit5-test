@@ -9,12 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NestedTest {
 
-    Lib lib;
-    static Logger logger;
+    private Lib lib;
+    private static Logger logger;
 
     @BeforeAll
     static void setup() {
-        logger = LoggerFactory.getLogger("LibTest");
+        logger = LoggerFactory.getLogger("NestedTest");
         logger.debug("static initialized");
     }
 
