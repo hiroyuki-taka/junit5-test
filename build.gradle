@@ -29,10 +29,10 @@ dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'ch.qos.logback:logback-core:1.2.3'
 
+    testRuntime "org.apiguardian:apiguardian-api:1.0.0"
     testCompile "org.junit.platform:junit-platform-launcher:1.0.1"
     testCompile "org.junit.jupiter:junit-jupiter-engine:5.0.1"
     testCompile "org.junit.jupiter:junit-jupiter-params:5.0.1"
-    testCompile "org.junit.vintage:junit-vintage-engine:4.12.1"
 }
 
 // Define the main class for the application
