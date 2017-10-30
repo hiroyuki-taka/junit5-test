@@ -2,10 +2,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class NestedTest {
 
@@ -45,12 +47,24 @@ class NestedTest {
     class Integer {
         @BeforeEach
         void init() {
-            logger.debug("inner(int) initialzed");
+            logger.debug("inner(int) initialized");
         }
 
         @Test
         void testPlus() {
+
             assertEquals(4L, lib.plus(3, 1));
+
+            assertThrows(Exception.class, new Executable() {
+                @Override
+                public void execute() throws Throwable {
+                    throw new Exception();
+                }
+            });
+
+            assertThrows(Exception.class, () -> {
+                throw new Exception();
+            });
         }
     }
 
@@ -58,7 +72,7 @@ class NestedTest {
     class Double {
         @BeforeEach
         void init() {
-            logger.debug("inner(double) initialzed");
+            logger.debug("inner(double) initialized");
         }
 
         @Test
